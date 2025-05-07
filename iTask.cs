@@ -4,11 +4,12 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace iTasks
 {
-    class iTask : DbContext
+    public class iTask : DbContext
     {
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Utilizador> Utilizadores { get; set; }
     }
 }
