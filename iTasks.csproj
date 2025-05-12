@@ -100,6 +100,15 @@
     </Compile>
     <Compile Include="Gestor.cs" />
     <Compile Include="iTask.cs" />
+    <Compile Include="Migrations\202505071122252_InitialCreate.cs" />
+    <Compile Include="Migrations\202505071122252_InitialCreate.Designer.cs">
+      <DependentUpon>202505071122252_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505120903099_InitialCreate1.cs" />
+    <Compile Include="Migrations\202505120903099_InitialCreate1.Designer.cs">
+      <DependentUpon>202505120903099_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505071122252_InitialCreate.resx">
+      <DependentUpon>202505071122252_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505120903099_InitialCreate1.resx">
+      <DependentUpon>202505120903099_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

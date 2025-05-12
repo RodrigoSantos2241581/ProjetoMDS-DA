@@ -19,3 +19,5 @@ C:\PSI\DA\Projeto\obj\Debug\iTasks.csproj.CoreCompileInputs.cache
 C:\PSI\DA\Projeto\obj\Debug\iTasks.csproj.Up2Date
 C:\PSI\DA\Projeto\obj\Debug\iTasks.exe
 C:\PSI\DA\Projeto\obj\Debug\iTasks.pdb
+C:\PSI\DA\Projeto\obj\Debug\iTasks.Migrations.InitialCreate.resources
+C:\PSI\DA\Projeto\obj\Debug\iTasks.Migrations.InitialCreate1.resources

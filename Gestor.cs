@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
-    public enum Departamento
+    public class Gestor : Utilizador
     {
-        IT,
-        Marketing,
-        Administracao
-    }
-    class Gestor : Utilizador
-    {
-        public Departamento Departamento { get; set; }
+        public string Departamento { get; set; }
         public string GereUtilizadores { get; set; }
     }
 }

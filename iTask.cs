@@ -11,5 +11,7 @@ namespace iTasks
     public class iTask : DbContext
     {
         public DbSet<Utilizador> Utilizadores { get; set; }
+        public DbSet<Gestor> Gestores { get; set; }
+        public DbSet<Programador> Programadores { get; set; }
     }
 }

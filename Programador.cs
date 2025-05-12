@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
-    public enum Experiencia
+    public class Programador : Utilizador
     {
-        Junior,
-        Senior
-    }
-    class Programador : Utilizador
-    {
-        public Experiencia NivelExperiencia { get; set; }
+        public int NivelExperiencia { get; set; }
         public string IdGestor { get; set; }
     }
 }
