@@ -11,31 +11,28 @@ namespace iTasks
         [STAThread]
         static void Main()
         {
-            // Criação do contexto da base de dados
             using (var db = new iTask())
             {
-                // Verifica se já existe um utilizador com o mesmo username
-                if (!db.Utilizadores.Any(u => u.Username == "Programador"))
+                if (!db.Utilizadores.Any(u => u.Username == "Gestor"))
                 {
-                    // Cria um novo utilizador do tipo "Programador"
-                    var programador = new Programador
+                    var gestor = new Gestor
                     {
-                        Nome = "Programador",
-                        Username = "Programador",
-                        Password = "1234", // Nota: Considerar encriptar esta password
-                        TipoUtilizador = "Programador"
+                        Nome = "Gestor",
+                        Username = "Gestor",
+                        Password = "1234",
+                        TipoUtilizador = "Gestor",
+                        Departamento = "IT",
+                        GereUtilizadores = "Sim"
                     };
 
-                    // Adiciona o utilizador à base de dados e guarda as alterações
-                    db.Utilizadores.Add(programador);
+                    db.Utilizadores.Add(gestor);
                     db.SaveChanges();
                 }
             }
 
-            // Inicialização da interface gráfica (Windows Forms)
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin()); // Inicia o formulário de login
+            Application.Run(new frmLogin());
         }
     }
 }

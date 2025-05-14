@@ -10,6 +10,11 @@ namespace iTasks
 {
     public class iTask : DbContext
     {
+        public iTask() : base("iTaskDB")
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<iTask, Migrations.Configuration>());
+        }
+
         public DbSet<Utilizador> Utilizadores { get; set; }
         public DbSet<Gestor> Gestores { get; set; }
         public DbSet<Programador> Programadores { get; set; }
