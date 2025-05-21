@@ -3,56 +3,75 @@
   "WorkspaceRootPath": "C:\\PSI\\DA\\Projeto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\gestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:gestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\programador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:programador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTaskDB/True/SqlTable/dbo.Utilizadors.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\itask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:itask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmkanban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmkanban.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\programador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\programador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\gestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\gestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmconsultatarefasemcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmconsultatarefasemcurso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\utilizador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\tarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\tipotarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmgereutilizadores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|C:\\PSI\\DA\\Projeto\\frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmgeretipostarefas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmdetalhestarefa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmkanban.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\view\\frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:view\\frmconsultartarefasconcluidas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|c:\\psi\\da\\projeto\\model\\itask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40078359-763C-472D-9D7E-8C252267F6FC}|iTasks.csproj|solutionrelative:model\\itask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,19 +81,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Configuration.cs",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Migrations\\Configuration.cs",
-              "RelativeDocumentMoniker": "Migrations\\Configuration.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\Migrations\\Configuration.cs",
-              "RelativeToolTip": "Migrations\\Configuration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "dbo.Utilizadors [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/iTaskDB/True/SqlTable/dbo.Utilizadors.sql",
+              "ToolTip": "dbo.Utilizadors [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-21T11:42:22.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmKanban.Designer.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.Designer.cs",
+              "RelativeDocumentMoniker": "View\\frmKanban.Designer.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.Designer.cs",
+              "RelativeToolTip": "View\\frmKanban.Designer.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAlwP0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T08:48:00.411Z",
+              "WhenOpened": "2025-05-21T09:30:42.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmGereUtilizadores.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmGereUtilizadores.cs",
+              "RelativeDocumentMoniker": "View\\frmGereUtilizadores.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmGereUtilizadores.cs*",
+              "RelativeToolTip": "View\\frmGereUtilizadores.cs*",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAqwGEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:41:58.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmKanban.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.cs",
+              "RelativeDocumentMoniker": "View\\frmKanban.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.cs",
+              "RelativeToolTip": "View\\frmKanban.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:39:04.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmLogin.cs",
+              "RelativeDocumentMoniker": "View\\frmLogin.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmLogin.cs",
+              "RelativeToolTip": "View\\frmLogin.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwC8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:28:19.237Z",
               "EditorCaption": ""
             },
             {
@@ -85,32 +153,58 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\PSI\\DA\\Projeto\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAIA9wA0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:39:16.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
+              "Title": "TipoTarefa.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\TipoTarefa.cs",
+              "RelativeDocumentMoniker": "Model\\TipoTarefa.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\TipoTarefa.cs",
+              "RelativeToolTip": "Model\\TipoTarefa.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA3wAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:24:29.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Tarefa.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\Tarefa.cs",
+              "RelativeDocumentMoniker": "Model\\Tarefa.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\Tarefa.cs",
+              "RelativeToolTip": "Model\\Tarefa.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T08:21:50.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Programador.cs",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Programador.cs",
-              "RelativeDocumentMoniker": "Programador.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\Programador.cs",
-              "RelativeToolTip": "Programador.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\Programador.cs",
+              "RelativeDocumentMoniker": "Model\\Programador.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\Programador.cs",
+              "RelativeToolTip": "Model\\Programador.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T11:09:16.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Gestor.cs",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Gestor.cs",
-              "RelativeDocumentMoniker": "Gestor.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\Gestor.cs",
-              "RelativeToolTip": "Gestor.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\Gestor.cs",
+              "RelativeDocumentMoniker": "Model\\Gestor.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\Gestor.cs",
+              "RelativeToolTip": "Model\\Gestor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T11:09:15.572Z",
@@ -118,25 +212,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Utilizador.cs",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Utilizador.cs",
-              "RelativeDocumentMoniker": "Utilizador.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\Utilizador.cs",
-              "RelativeToolTip": "Utilizador.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\Utilizador.cs",
+              "RelativeDocumentMoniker": "Model\\Utilizador.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\Utilizador.cs",
+              "RelativeToolTip": "Model\\Utilizador.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:33:44.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 17,
               "Title": "iTask.cs",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\iTask.cs",
-              "RelativeDocumentMoniker": "iTask.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\iTask.cs",
-              "RelativeToolTip": "iTask.cs",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\Model\\iTask.cs",
+              "RelativeDocumentMoniker": "Model\\iTask.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\Model\\iTask.cs",
+              "RelativeToolTip": "Model\\iTask.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:40:16.741Z",
@@ -144,84 +238,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "frmConsultarTarefasConcluidas.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmConsultarTarefasConcluidas.cs",
-              "RelativeDocumentMoniker": "frmConsultarTarefasConcluidas.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmConsultarTarefasConcluidas.cs [Design]",
-              "RelativeToolTip": "frmConsultarTarefasConcluidas.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmConsultarTarefasConcluidas.cs",
+              "RelativeDocumentMoniker": "View\\frmConsultarTarefasConcluidas.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmConsultarTarefasConcluidas.cs [Design]",
+              "RelativeToolTip": "View\\frmConsultarTarefasConcluidas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:18.89Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmConsultaTarefasEmCurso.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmConsultaTarefasEmCurso.cs",
-              "RelativeDocumentMoniker": "frmConsultaTarefasEmCurso.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmConsultaTarefasEmCurso.cs [Design]",
-              "RelativeToolTip": "frmConsultaTarefasEmCurso.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T10:31:18.069Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "frmDetalhesTarefa.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmDetalhesTarefa.cs",
-              "RelativeDocumentMoniker": "frmDetalhesTarefa.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmDetalhesTarefa.cs [Design]",
-              "RelativeToolTip": "frmDetalhesTarefa.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmDetalhesTarefa.cs",
+              "RelativeDocumentMoniker": "View\\frmDetalhesTarefa.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmDetalhesTarefa.cs [Design]",
+              "RelativeToolTip": "View\\frmDetalhesTarefa.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:17.371Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "frmGereTiposTarefas.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmGereTiposTarefas.cs",
-              "RelativeDocumentMoniker": "frmGereTiposTarefas.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmGereTiposTarefas.cs [Design]",
-              "RelativeToolTip": "frmGereTiposTarefas.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmGereTiposTarefas.cs",
+              "RelativeDocumentMoniker": "View\\frmGereTiposTarefas.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmGereTiposTarefas.cs [Design]",
+              "RelativeToolTip": "View\\frmGereTiposTarefas.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:16.366Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "frmGereUtilizadores.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmGereUtilizadores.cs",
-              "RelativeDocumentMoniker": "frmGereUtilizadores.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmGereUtilizadores.cs [Design]",
-              "RelativeToolTip": "frmGereUtilizadores.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmGereUtilizadores.cs",
+              "RelativeDocumentMoniker": "View\\frmGereUtilizadores.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmGereUtilizadores.cs [Design]*",
+              "RelativeToolTip": "View\\frmGereUtilizadores.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:15.51Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "frmKanban.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmKanban.cs",
-              "RelativeDocumentMoniker": "frmKanban.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmKanban.cs [Design]",
-              "RelativeToolTip": "frmKanban.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.cs",
+              "RelativeDocumentMoniker": "View\\frmKanban.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmKanban.cs [Design]",
+              "RelativeToolTip": "View\\frmKanban.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:13.818Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\frmLogin.cs",
-              "RelativeDocumentMoniker": "frmLogin.cs",
-              "ToolTip": "C:\\PSI\\DA\\Projeto\\frmLogin.cs [Design]",
-              "RelativeToolTip": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\PSI\\DA\\Projeto\\View\\frmLogin.cs",
+              "RelativeDocumentMoniker": "View\\frmLogin.cs",
+              "ToolTip": "C:\\PSI\\DA\\Projeto\\View\\frmLogin.cs [Design]",
+              "RelativeToolTip": "View\\frmLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-07T10:31:09.367Z",
               "EditorCaption": " [Design]"

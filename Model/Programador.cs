@@ -11,7 +11,7 @@ namespace iTasks
     {
         [Required]
         public string NivelExperiencia { get; set; }
-        [Required]
-        public string IdGestor { get; set; }
+
+        public Gestor Gestor { get; set; }
     }
 }
