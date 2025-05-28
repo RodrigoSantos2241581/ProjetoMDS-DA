@@ -29,8 +29,9 @@ namespace iTasks
 
                 // Load managers combo for programmers
                 cbGestorProg.DataSource = db.Utilizadores.OfType<Gestor>()
-                                             .Select(g => g.Username)
-                                             .ToList();
+                             .Where(g => g.GereUtilizadores == "Sim")
+                             .Select(g => g.Username)
+                             .ToList();
             }
         }
 
@@ -127,14 +128,23 @@ namespace iTasks
 
             using (var db = new iTask())
             {
+                // Filtra apenas gestores que podem gerir utilizadores
                 var selectedGestor = db.Utilizadores.OfType<Gestor>()
-                                       .FirstOrDefault(g => g.Username == cbGestorProg.Text);
+                                       .FirstOrDefault(g => g.Username == cbGestorProg.Text &&
+                                                           g.GereUtilizadores == "Sim");
+
+                if (selectedGestor == null)
+                {
+                    MessageBox.Show("Por favor, selecione um gestor com permissão para gerir utilizadores",
+                                    "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 var programador = new Programador
                 {
                     Nome = txtNomeProg.Text,
                     Username = txtUsernameProg.Text,
-                    Password = txtPasswordProg.Text, // Note: Should be hashed in production
+                    Password = txtPasswordProg.Text, // Deveria ser encriptada em produção
                     TipoUtilizador = "Programador",
                     NivelExperiencia = cbNivelProg.Text,
                     Gestor = selectedGestor
