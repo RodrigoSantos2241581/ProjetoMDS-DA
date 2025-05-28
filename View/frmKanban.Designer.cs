@@ -242,6 +242,7 @@
             this.btNova.TabIndex = 8;
             this.btNova.Text = "Nova Tarefa";
             this.btNova.UseVisualStyleBackColor = true;
+            this.btNova.Click += new System.EventHandler(this.btNova_Click);
             // 
             // label1
             // 

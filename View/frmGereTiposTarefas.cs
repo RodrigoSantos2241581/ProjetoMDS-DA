@@ -16,5 +16,9 @@ namespace iTasks
         {
             InitializeComponent();
         }
+
+        private void btGravar_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

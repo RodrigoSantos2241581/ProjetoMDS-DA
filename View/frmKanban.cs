@@ -48,17 +48,33 @@ namespace iTasks
                     // Disable the menu item if the user does not have permission
                     gerirUtilizadoresToolStripMenuItem.Enabled = false;
                     gerirTiposDeTarefasToolStripMenuItem.Enabled = false;
+                    btNova.Enabled = false;
                 }
                 else
                 {
                     // Enable the menu item if the user has permission
                     gerirUtilizadoresToolStripMenuItem.Enabled = true;
                     gerirTiposDeTarefasToolStripMenuItem.Enabled = true;
-
+                    btNova.Enabled = true;
                 }
             }
         }
 
+        private void btNova_Click(object sender, EventArgs e)
+        {
+            // Vai buscar o Id do gestor
+            int gestorId = 0;
+            using (var db = new iTask())
+            {
+                var gestor = db.Utilizadores.OfType<Gestor>().FirstOrDefault(u => u.Username == Utillizador);
+                if (gestor != null)
+                {
+                    gestorId = gestor.Id;
+                }
+            }
 
+            frmDetalhesTarefa detalhesTarefaForm = new frmDetalhesTarefa(gestorId);
+            detalhesTarefaForm.Show();
+        }
     }
 }

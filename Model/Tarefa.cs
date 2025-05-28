@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
-    class Tarefa
+    public class Tarefa
     {
         public int Id { get; set; }
 
