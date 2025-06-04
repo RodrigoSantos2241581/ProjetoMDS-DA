@@ -16,6 +16,7 @@ namespace iTasks
         {
             InitializeComponent();
             LerBaseDados();
+            lstLista.SelectedIndex = -1;
         }
 
         public void LerBaseDados()
@@ -63,6 +64,75 @@ namespace iTasks
 
                     db.TiposTarefas.Add(TipoTarefa);
                     db.SaveChanges();
+                }
+            }
+        }
+
+        private void lstLista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstLista.SelectedIndex == -1)
+            {
+                txtId.Clear();
+                txtDesc.Clear();
+                return;
+            }
+            if (lstLista.SelectedItem != null)
+            {
+                string selectedDescription = lstLista.SelectedItem.ToString();
+                using (var db = new iTask())
+                {
+                    var tipoTarefa = db.TiposTarefas.FirstOrDefault(t => t.Descricao == selectedDescription);
+                    if (tipoTarefa != null)
+                    {
+                        txtId.Text = tipoTarefa.Id.ToString();
+                        txtDesc.Text = tipoTarefa.Descricao;
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is frmKanban)
+                {
+                    form.Show();
+                    break;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lstLista.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um Tipo de tarefa para remover!");
+                return;
+            }
+
+
+            string descricao = lstLista.GetItemText(lstLista.SelectedItem);
+
+            using (var db = new iTask())
+            {
+                var tipoParaRemover = db.TiposTarefas.FirstOrDefault(u => u.Descricao == descricao);
+
+                if (tipoParaRemover != null)
+                {
+                    db.TiposTarefas.Remove(tipoParaRemover);
+                    db.SaveChanges();
+
+                    lstLista.DataSource = db.TiposTarefas.ToList();
+                    lstLista.DisplayMember = "Descricao";
+
+                    MessageBox.Show("Tipo de tarefa removido com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Tipo de tarefa não encontrado!");
                 }
             }
         }

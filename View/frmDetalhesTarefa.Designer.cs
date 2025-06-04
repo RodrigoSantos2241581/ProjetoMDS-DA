@@ -46,7 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDataRealini = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtdataRealFim = new System.Windows.Forms.TextBox();
+            this.txtDataRealFim = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDataCriacao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,12 +56,13 @@
             this.btFechar = new System.Windows.Forms.Button();
             this.txtStoryPoints = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtId
             // 
             this.txtId.Location = new System.Drawing.Point(176, 15);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(81, 22);
@@ -91,7 +92,7 @@
             // 
             this.cbProgramador.FormattingEnabled = true;
             this.cbProgramador.Location = new System.Drawing.Point(176, 203);
-            this.cbProgramador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbProgramador.Margin = new System.Windows.Forms.Padding(4);
             this.cbProgramador.Name = "cbProgramador";
             this.cbProgramador.Size = new System.Drawing.Size(413, 24);
             this.cbProgramador.TabIndex = 6;
@@ -99,7 +100,7 @@
             // txtOrdem
             // 
             this.txtOrdem.Location = new System.Drawing.Point(176, 236);
-            this.txtOrdem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOrdem.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrdem.Name = "txtOrdem";
             this.txtOrdem.Size = new System.Drawing.Size(81, 22);
             this.txtOrdem.TabIndex = 9;
@@ -117,7 +118,7 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(176, 138);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(4);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(565, 22);
             this.txtDesc.TabIndex = 11;
@@ -146,7 +147,7 @@
             // 
             this.cbTipoTarefa.FormattingEnabled = true;
             this.cbTipoTarefa.Location = new System.Drawing.Point(176, 170);
-            this.cbTipoTarefa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbTipoTarefa.Margin = new System.Windows.Forms.Padding(4);
             this.cbTipoTarefa.Name = "cbTipoTarefa";
             this.cbTipoTarefa.Size = new System.Drawing.Size(413, 24);
             this.cbTipoTarefa.TabIndex = 12;
@@ -154,7 +155,7 @@
             // dtInicio
             // 
             this.dtInicio.Location = new System.Drawing.Point(176, 305);
-            this.dtInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtInicio.Margin = new System.Windows.Forms.Padding(4);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(265, 22);
             this.dtInicio.TabIndex = 14;
@@ -182,7 +183,7 @@
             // dtFim
             // 
             this.dtFim.Location = new System.Drawing.Point(176, 337);
-            this.dtFim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtFim.Margin = new System.Windows.Forms.Padding(4);
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(265, 22);
             this.dtFim.TabIndex = 16;
@@ -190,7 +191,7 @@
             // txtEstado
             // 
             this.txtEstado.Location = new System.Drawing.Point(568, 15);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.ReadOnly = true;
             this.txtEstado.Size = new System.Drawing.Size(173, 22);
@@ -209,7 +210,7 @@
             // txtDataRealini
             // 
             this.txtDataRealini.Location = new System.Drawing.Point(176, 52);
-            this.txtDataRealini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataRealini.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataRealini.Name = "txtDataRealini";
             this.txtDataRealini.ReadOnly = true;
             this.txtDataRealini.Size = new System.Drawing.Size(179, 22);
@@ -225,29 +226,29 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Data Real de Início:";
             // 
-            // txtdataRealFim
+            // txtDataRealFim
             // 
-            this.txtdataRealFim.Location = new System.Drawing.Point(176, 84);
-            this.txtdataRealFim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtdataRealFim.Name = "txtdataRealFim";
-            this.txtdataRealFim.ReadOnly = true;
-            this.txtdataRealFim.Size = new System.Drawing.Size(179, 22);
-            this.txtdataRealFim.TabIndex = 23;
+            this.txtDataRealFim.Location = new System.Drawing.Point(176, 84);
+            this.txtDataRealFim.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataRealFim.Name = "txtDataRealFim";
+            this.txtDataRealFim.ReadOnly = true;
+            this.txtDataRealFim.Size = new System.Drawing.Size(179, 22);
+            this.txtDataRealFim.TabIndex = 23;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 87);
+            this.label10.Location = new System.Drawing.Point(-1, 87);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 16);
+            this.label10.Size = new System.Drawing.Size(162, 16);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Data Real de Início:";
+            this.label10.Text = "Data Real de Finalizacao:";
             // 
             // txtDataCriacao
             // 
             this.txtDataCriacao.Location = new System.Drawing.Point(568, 52);
-            this.txtDataCriacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataCriacao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataCriacao.Name = "txtDataCriacao";
             this.txtDataCriacao.ReadOnly = true;
             this.txtDataCriacao.Size = new System.Drawing.Size(173, 22);
@@ -267,7 +268,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Location = new System.Drawing.Point(11, 124);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(745, 2);
             this.panel1.TabIndex = 26;
@@ -276,7 +277,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Location = new System.Drawing.Point(11, 373);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(745, 2);
             this.panel2.TabIndex = 27;
@@ -284,7 +285,7 @@
             // btGravar
             // 
             this.btGravar.Location = new System.Drawing.Point(421, 390);
-            this.btGravar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btGravar.Margin = new System.Windows.Forms.Padding(4);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(188, 28);
             this.btGravar.TabIndex = 28;
@@ -295,17 +296,18 @@
             // btFechar
             // 
             this.btFechar.Location = new System.Drawing.Point(617, 390);
-            this.btFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btFechar.Margin = new System.Windows.Forms.Padding(4);
             this.btFechar.Name = "btFechar";
             this.btFechar.Size = new System.Drawing.Size(139, 28);
             this.btFechar.TabIndex = 29;
             this.btFechar.Text = "Fechar";
             this.btFechar.UseVisualStyleBackColor = true;
+            this.btFechar.Click += new System.EventHandler(this.btFechar_Click);
             // 
             // txtStoryPoints
             // 
             this.txtStoryPoints.Location = new System.Drawing.Point(176, 268);
-            this.txtStoryPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStoryPoints.Margin = new System.Windows.Forms.Padding(4);
             this.txtStoryPoints.Name = "txtStoryPoints";
             this.txtStoryPoints.Size = new System.Drawing.Size(81, 22);
             this.txtStoryPoints.TabIndex = 31;
@@ -320,11 +322,22 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "StoryPoints:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(225, 390);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(188, 28);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Apagar Dados";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmDetalhesTarefa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtStoryPoints);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btFechar);
@@ -333,7 +346,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDataCriacao);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtdataRealFim);
+            this.Controls.Add(this.txtDataRealFim);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtDataRealini);
             this.Controls.Add(this.label9);
@@ -353,7 +366,7 @@
             this.Controls.Add(this.cbProgramador);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDetalhesTarefa";
             this.Text = "frmDetalhesTarefa";
             this.ResumeLayout(false);
@@ -381,7 +394,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDataRealini;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtdataRealFim;
+        private System.Windows.Forms.TextBox txtDataRealFim;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDataCriacao;
         private System.Windows.Forms.Label label11;
@@ -391,5 +404,6 @@
         private System.Windows.Forms.Button btFechar;
         private System.Windows.Forms.TextBox txtStoryPoints;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }

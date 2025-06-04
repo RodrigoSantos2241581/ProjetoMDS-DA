@@ -157,5 +157,19 @@ namespace iTasks
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is frmKanban)
+                {
+                    form.Show();
+                    break;
+                }
+            }
+        }
     }
 }

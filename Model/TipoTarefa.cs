@@ -10,5 +10,7 @@ namespace iTasks
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
+
+        public virtual ICollection<Tarefa> Tarefas { get; set; }
     }
 }

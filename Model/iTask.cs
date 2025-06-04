@@ -19,5 +19,25 @@ namespace iTasks
         public DbSet<Gestor> Gestores { get; set; }
         public DbSet<Programador> Programadores { get; set; }
         public DbSet<TipoTarefa> TiposTarefas { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
+    
+
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Evitar múltiplas cascatas: define DeleteBehavior como Restrict
+            modelBuilder.Entity<Tarefa>()
+                .HasRequired(t => t.Gestor)
+                .WithMany()
+                .HasForeignKey(t => t.IdGestor)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Tarefa>()
+                .HasRequired(t => t.Programador)
+                .WithMany()
+                .HasForeignKey(t => t.IdProgramador)
+                .WillCascadeOnDelete(false);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
