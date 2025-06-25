@@ -23,12 +23,13 @@ namespace iTasks
         {
             using (var db = new iTask())
             {
-                lstLista.DataSource = db.TiposTarefas.OfType<TipoTarefa>()
-                                             .Select(g => g.Descricao)
-                                             .Distinct()
-                                             .ToList();
+                lstLista.DataSource = db.TiposTarefas
+                                      .Select(t => t.Descricao)
+                                      .Distinct()
+                                      .ToList();
             }
         }
+
         private void btGravar_Click(object sender, EventArgs e)
         {
             string descricao = txtDesc.Text;
@@ -37,34 +38,60 @@ namespace iTasks
             {
                 if (string.IsNullOrWhiteSpace(descricao))
                 {
-                    MessageBox.Show("A descrição não pode estar vazia.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A descrição não pode estar vazia.", "Erro",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                AdicionarTipoTarefa(descricao);
-                MessageBox.Show("Tipo de tarefa adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                using (var db = new iTask())
+                {
+                    if (!string.IsNullOrWhiteSpace(txtId.Text)) // Modo edição
+                    {
+                        int id = int.Parse(txtId.Text);
+                        var tipoExistente = db.TiposTarefas.Find(id);
+
+                        if (tipoExistente != null)
+                        {
+                            // Verifica se a descrição foi alterada para um valor que já existe
+                            if (tipoExistente.Descricao != descricao &&
+                                db.TiposTarefas.Any(t => t.Descricao == descricao))
+                            {
+                                MessageBox.Show("Já existe um tipo de tarefa com esta descrição.", "Erro",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            tipoExistente.Descricao = descricao;
+                            db.SaveChanges();
+                            MessageBox.Show("Tipo de tarefa atualizado com sucesso!", "Sucesso",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else // Modo criação
+                    {
+                        if (db.TiposTarefas.Any(t => t.Descricao == descricao))
+                        {
+                            MessageBox.Show("Já existe um tipo de tarefa com esta descrição.", "Erro",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        var novoTipo = new TipoTarefa { Descricao = descricao };
+                        db.TiposTarefas.Add(novoTipo);
+                        db.SaveChanges();
+                        MessageBox.Show("Tipo de tarefa adicionado com sucesso!", "Sucesso",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
                 txtDesc.Clear();
+                txtId.Clear();
+                LerBaseDados();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao adicionar tipo de tarefa: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-    
-
-    public void AdicionarTipoTarefa(string descricao)
-        {
-            using (var db = new iTask())
-            {
-                if (!db.TiposTarefas.Any(u => u.Descricao == descricao))
-                {
-                    var TipoTarefa = new TipoTarefa
-                    {
-                        Descricao = descricao
-                    };
-
-                    db.TiposTarefas.Add(TipoTarefa);
-                    db.SaveChanges();
-                }
+                MessageBox.Show($"Erro: {ex.Message}", "Erro",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -76,64 +103,68 @@ namespace iTasks
                 txtDesc.Clear();
                 return;
             }
-            if (lstLista.SelectedItem != null)
-            {
-                string selectedDescription = lstLista.SelectedItem.ToString();
-                using (var db = new iTask())
-                {
-                    var tipoTarefa = db.TiposTarefas.FirstOrDefault(t => t.Descricao == selectedDescription);
-                    if (tipoTarefa != null)
-                    {
-                        txtId.Text = tipoTarefa.Id.ToString();
-                        txtDesc.Text = tipoTarefa.Descricao;
-                    }
-                }
-            }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is frmKanban)
-                {
-                    form.Show();
-                    break;
-                }
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (lstLista.SelectedItem == null)
-            {
-                MessageBox.Show("Selecione um Tipo de tarefa para remover!");
-                return;
-            }
-
-
-            string descricao = lstLista.GetItemText(lstLista.SelectedItem);
+            string descricaoSelecionada = lstLista.SelectedItem.ToString();
 
             using (var db = new iTask())
             {
-                var tipoParaRemover = db.TiposTarefas.FirstOrDefault(u => u.Descricao == descricao);
-
-                if (tipoParaRemover != null)
+                var tipo = db.TiposTarefas.FirstOrDefault(t => t.Descricao == descricaoSelecionada);
+                if (tipo != null)
                 {
-                    db.TiposTarefas.Remove(tipoParaRemover);
-                    db.SaveChanges();
-
-                    lstLista.DataSource = db.TiposTarefas.ToList();
-                    lstLista.DisplayMember = "Descricao";
-
-                    MessageBox.Show("Tipo de tarefa removido com sucesso!");
+                    txtId.Text = tipo.Id.ToString();
+                    txtDesc.Text = tipo.Descricao;
                 }
-                else
+            }
+        }
+        private void btVoltar_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            var kanbanForm = Application.OpenForms.OfType<frmKanban>().FirstOrDefault();
+            kanbanForm?.Show();
+        }
+
+        private void btRemover_Click_1(object sender, EventArgs e)
+        {
+            if (lstLista.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um tipo de tarefa para remover!", "Aviso",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string descricao = lstLista.SelectedItem.ToString();
+
+            try
+            {
+                using (var db = new iTask())
                 {
-                    MessageBox.Show("Tipo de tarefa não encontrado!");
+                    var tipoParaRemover = db.TiposTarefas.FirstOrDefault(t => t.Descricao == descricao);
+
+                    if (tipoParaRemover != null)
+                    {
+                        // Verifica se existem tarefas associadas a este tipo
+                        if (tipoParaRemover.Tarefas != null && tipoParaRemover.Tarefas.Any())
+                        {
+                            MessageBox.Show("Não é possível remover este tipo de tarefa pois existem tarefas associadas a ele.",
+                                          "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        db.TiposTarefas.Remove(tipoParaRemover);
+                        db.SaveChanges();
+
+                        MessageBox.Show("Tipo de tarefa removido com sucesso!", "Sucesso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LerBaseDados();
+                        txtId.Clear();
+                        txtDesc.Clear();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao remover: {ex.Message}", "Erro",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

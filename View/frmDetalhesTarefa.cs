@@ -15,12 +15,27 @@ namespace iTasks
 
     public partial class frmDetalhesTarefa : Form
     {
-        public frmDetalhesTarefa(int id)
+        public frmDetalhesTarefa(int gestorId, int? tarefaId = null)
         {
             InitializeComponent();
-            CarregarProgramadores(id);
+            CarregarProgramadores(gestorId);
             CarregarTipoTarefa();
-            MostrarDetalhes(id);
+
+            // Só mostra detalhes se for uma tarefa existente
+            if (tarefaId.HasValue && tarefaId.Value > 0)
+            {
+                MostrarDetalhes(tarefaId.Value);
+                this.Text = "Editar Tarefa";
+            }
+            else
+            {
+                this.Text = "Nova Tarefa";
+                // Configura valores padrão para nova tarefa
+                txtEstado.Text = "To Do";
+                txtDataCriacao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                dtInicio.Value = DateTime.Now;
+                dtFim.Value = DateTime.Now.AddDays(1);
+            }
         }
         private void MostrarDetalhes(int id)
         {
@@ -64,14 +79,12 @@ namespace iTasks
                 cbProgramador.Items.Clear();
                 cbProgramador.Text = "Selecione um Programador";
 
-                // Correção: Usar a instância correta do contexto de dados
-                using (var context = new iTask()) // Substitua "iTask" pelo nome real da sua classe de contexto
+                using (var db = new iTask())
                 {
-                    var programadores = context.Utilizadores
+                    // Consulta corrigida para buscar todos programadores do gestor
+                    var programadores = db.Utilizadores
                                        .OfType<Programador>()
-                                       .Where(p => p.Gestor != null &&
-                                                  p.Gestor.Id == gestorId &&
-                                                  !string.IsNullOrEmpty(p.Username))
+                                       .Where(p => p.Gestor.Id == gestorId)
                                        .OrderBy(p => p.Username)
                                        .ToList();
 
@@ -79,12 +92,11 @@ namespace iTasks
                     {
                         foreach (var programador in programadores)
                         {
-                            cbProgramador.Items.Add(
-                                programador.Username
-                            );
+                            cbProgramador.Items.Add(programador.Username);
                         }
 
-                        cbProgramador.SelectedIndex = 0;
+                        // Não seleciona automaticamente o primeiro item
+                        cbProgramador.SelectedIndex = -1;
                     }
                     else
                     {
@@ -143,6 +155,7 @@ namespace iTasks
             string descricao = txtDesc.Text;
             string programador = cbProgramador.SelectedItem?.ToString();
             string tipoTarefa = cbTipoTarefa.SelectedItem?.ToString();
+
             try
             {
                 if (string.IsNullOrWhiteSpace(descricao))
@@ -160,13 +173,95 @@ namespace iTasks
                     MessageBox.Show("Por favor, selecione um tipo de tarefa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                AdicionarTarefa(descricao, programador, tipoTarefa);
-                MessageBox.Show("Tarefa adicionada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDesc.Clear();
+
+                // Verifica se é uma edição (txtId preenchido) ou nova tarefa
+                if (!string.IsNullOrWhiteSpace(txtId.Text) && int.TryParse(txtId.Text, out int tarefaId))
+                {
+                    AtualizarTarefa(tarefaId, descricao, programador, tipoTarefa);
+                    MessageBox.Show("Tarefa atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    AdicionarTarefa(descricao, programador, tipoTarefa);
+                    MessageBox.Show("Tarefa adicionada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtDesc.Clear();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao adicionar tarefa: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao processar tarefa: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AtualizarTarefa(int tarefaId, string descricao, string programador, string tipoTarefa)
+        {
+            using (var db = new iTask())
+            {
+                try
+                {
+                    // 1. Obter a tarefa existente
+                    var tarefa = db.Tarefas
+                        .Include(t => t.Programador)
+                        .Include(t => t.TipoTarefa)
+                        .FirstOrDefault(t => t.Id == tarefaId);
+
+                    if (tarefa == null)
+                    {
+                        MessageBox.Show("Tarefa não encontrada", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // 2. Obter as entidades relacionadas
+                    var programadorEntity = db.Utilizadores
+                        .OfType<Programador>()
+                        .FirstOrDefault(p => p.Username == programador);
+
+                    var tipoTarefaEntity = db.TiposTarefas
+                        .FirstOrDefault(t => t.Descricao == tipoTarefa);
+
+                    // 3. Validações
+                    if (programadorEntity == null)
+                    {
+                        MessageBox.Show("Programador não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (tipoTarefaEntity == null)
+                    {
+                        MessageBox.Show("Tipo de tarefa não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // 4. Atualizar os campos da tarefa
+                    tarefa.Descricao = descricao;
+                    tarefa.IdProgramador = programadorEntity.Id;
+                    tarefa.Programador = programadorEntity;
+                    tarefa.IdTipoTarefa = tipoTarefaEntity.Id;
+                    tarefa.TipoTarefa = tipoTarefaEntity;
+                    tarefa.Ordem = txtOrdem.Text;
+                    tarefa.StoryPoints = !string.IsNullOrWhiteSpace(txtStoryPoints.Text) ?
+                                        int.Parse(txtStoryPoints.Text) : 1;
+                    tarefa.DataPrevistaInicio = dtInicio.Value;
+                    tarefa.DataPrevistaFim = dtFim.Value;
+                    tarefa.EstadoAtual = txtEstado.Text;
+
+                    // 5. Marcar como modificado e salvar
+                    db.Entry(tarefa).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    MessageBox.Show("Tarefa atualizada com sucesso!", "Sucesso",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (DbUpdateException dbEx)
+                {
+                    var errorMessage = dbEx.InnerException?.Message ?? dbEx.Message;
+                    MessageBox.Show($"Erro ao atualizar no banco de dados: {errorMessage}", "Erro",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -62,7 +63,6 @@ namespace iTasks
         }
         private void btGravarGestor_Click(object sender, EventArgs e)
         {
-
             string nome = txtNomeGestor.Text;
             string username = txtUsernameGestor.Text;
             string password = txtPasswordGestor.Text;
@@ -82,26 +82,65 @@ namespace iTasks
 
             using (var db = new iTask())
             {
-                if (!db.Utilizadores.Any(u => u.Username == username))
+                // Verifica se estamos editando um gestor existente
+                if (!string.IsNullOrWhiteSpace(txtIdGestor.Text) && int.TryParse(txtIdGestor.Text, out int id))
                 {
-                    var gestor = new Gestor // Explicitly create as Gestor
-                    {
-                        Nome = nome,
-                        Username = username,
-                        Password = password,
-                        TipoUtilizador = "Gestor",
-                        Departamento = departamento,
-                        GereUtilizadores = gereUtilizadores
-                    };
+                    // Modo edição - atualiza o gestor existente
+                    var gestorExistente = db.Utilizadores.OfType<Gestor>().FirstOrDefault(g => g.Id == id);
 
-                    db.Utilizadores.Add(gestor);
-                    db.SaveChanges();
-                    LerBaseDados();
+                    if (gestorExistente != null)
+                    {
+                        // Verifica se o username foi alterado e se já existe
+                        if (gestorExistente.Username != username &&
+                            db.Utilizadores.Any(u => u.Username == username && u.Id != id))
+                        {
+                            MessageBox.Show("Este username já está em uso. Por favor escolha outro.", "Erro",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        gestorExistente.Nome = nome;
+                        gestorExistente.Username = username;
+                        gestorExistente.Password = password;
+                        gestorExistente.Departamento = departamento;
+                        gestorExistente.GereUtilizadores = gereUtilizadores;
+
+                        db.SaveChanges();
+                        LerBaseDados();
+                        MessageBox.Show("Gestor atualizado com sucesso!", "Sucesso",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpa os campos após a edição
+                        txtIdGestor.Clear();
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Este username já está em uso. Por favor escolha outro.", "Erro",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Modo criação - adiciona novo gestor
+                    if (!db.Utilizadores.Any(u => u.Username == username))
+                    {
+                        var gestor = new Gestor
+                        {
+                            Nome = nome,
+                            Username = username,
+                            Password = password,
+                            TipoUtilizador = "Gestor",
+                            Departamento = departamento,
+                            GereUtilizadores = gereUtilizadores
+                        };
+
+                        db.Utilizadores.Add(gestor);
+                        db.SaveChanges();
+                        LerBaseDados();
+                        MessageBox.Show("Gestor criado com sucesso!", "Sucesso",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este username já está em uso. Por favor escolha outro.", "Erro",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -112,25 +151,24 @@ namespace iTasks
             string username = txtUsernameProg.Text;
             string password = txtPasswordProg.Text;
             string nivel = cbNivelProg.Text;
-            string gestor = cbGestorProg.Text;
+            string gestorUsername = cbGestorProg.Text;
 
             if (string.IsNullOrWhiteSpace(nome) ||
                 string.IsNullOrWhiteSpace(username) ||
                 string.IsNullOrWhiteSpace(password) ||
                 string.IsNullOrWhiteSpace(nivel) ||
-                string.IsNullOrWhiteSpace(gestor))
+                string.IsNullOrWhiteSpace(gestorUsername))
             {
                 MessageBox.Show("Por favor, preencha todos os campos obrigatórios.", "Aviso",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-
             using (var db = new iTask())
             {
                 // Filtra apenas gestores que podem gerir utilizadores
                 var selectedGestor = db.Utilizadores.OfType<Gestor>()
-                                       .FirstOrDefault(g => g.Username == cbGestorProg.Text &&
+                                       .FirstOrDefault(g => g.Username == gestorUsername &&
                                                            g.GereUtilizadores == "Sim");
 
                 if (selectedGestor == null)
@@ -140,21 +178,67 @@ namespace iTasks
                     return;
                 }
 
-                var programador = new Programador
+                // Verifica se estamos editando um programador existente
+                if (!string.IsNullOrWhiteSpace(txtIdProg.Text) && int.TryParse(txtIdProg.Text, out int id))
                 {
-                    Nome = txtNomeProg.Text,
-                    Username = txtUsernameProg.Text,
-                    Password = txtPasswordProg.Text, // Deveria ser encriptada em produção
-                    TipoUtilizador = "Programador",
-                    NivelExperiencia = cbNivelProg.Text,
-                    Gestor = selectedGestor
-                };
+                    // Modo edição - atualiza o programador existente
+                    var programadorExistente = db.Utilizadores.OfType<Programador>()
+                                                 .FirstOrDefault(p => p.Id == id);
 
-                db.Utilizadores.Add(programador);
-                db.SaveChanges();
-                LerBaseDados();
-                MessageBox.Show("Programador criado com sucesso!", "Sucesso",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (programadorExistente != null)
+                    {
+                        // Verifica se o username foi alterado e se já existe
+                        if (programadorExistente.Username != username &&
+                            db.Utilizadores.Any(u => u.Username == username && u.Id != id))
+                        {
+                            MessageBox.Show("Este username já está em uso. Por favor escolha outro.", "Erro",
+                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        programadorExistente.Nome = nome;
+                        programadorExistente.Username = username;
+                        programadorExistente.Password = password;
+                        programadorExistente.NivelExperiencia = nivel;
+                        programadorExistente.Gestor = selectedGestor;
+
+                        db.SaveChanges();
+                        LerBaseDados();
+                        MessageBox.Show("Programador atualizado com sucesso!", "Sucesso",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpa os campos após a edição
+                        txtIdProg.Clear();
+                        return;
+                    }
+                }
+                else
+                {
+                    // Modo criação - adiciona novo programador
+                    if (!db.Utilizadores.Any(u => u.Username == username))
+                    {
+                        var programador = new Programador
+                        {
+                            Nome = nome,
+                            Username = username,
+                            Password = password,
+                            TipoUtilizador = "Programador",
+                            NivelExperiencia = nivel,
+                            Gestor = selectedGestor
+                        };
+
+                        db.Utilizadores.Add(programador);
+                        db.SaveChanges();
+                        LerBaseDados();
+                        MessageBox.Show("Programador criado com sucesso!", "Sucesso",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este username já está em uso. Por favor escolha outro.", "Erro",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
@@ -168,6 +252,66 @@ namespace iTasks
                 {
                     form.Show();
                     break;
+                }
+            }
+        }
+
+        private void lstListaGestores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica se um item está selecionado
+            if (lstListaGestores.SelectedItem != null)
+            {
+                // Obtém o gestor selecionado
+                string selectedItem = lstListaGestores.SelectedItem.ToString();
+                string username = selectedItem.Split(new[] { " -> " }, StringSplitOptions.None)[0];
+                using (var db = new iTask())
+                {
+                    // Busca o gestor pelo username
+                    var gestor = db.Utilizadores.OfType<Gestor>().FirstOrDefault(g => g.Username == username);
+                    if (gestor != null)
+                    {
+                        txtIdGestor.Text = gestor.Id.ToString();
+                        txtNomeGestor.Text = gestor.Nome;
+                        txtUsernameGestor.Text = gestor.Username;
+                        txtPasswordGestor.Text = gestor.Password;
+                        cbDepartamento.Text = gestor.Departamento;
+                        chkGereUtilizadores.Checked = gestor.GereUtilizadores == "Sim";
+                    }
+                }
+            }
+        }
+
+        private void lstListaProgramadores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstListaProgramadores.SelectedItem != null)
+            {
+                string selectedItem = lstListaProgramadores.SelectedItem.ToString();
+                string username = selectedItem.Split(new[] { " -> " }, StringSplitOptions.None)[0];
+
+                using (var db = new iTask())
+                {
+                    var programador = db.Utilizadores.OfType<Programador>()
+                                        .Include(p => p.Gestor) // Carrega o gestor relacionado
+                                        .FirstOrDefault(p => p.Username == username);
+
+                    if (programador != null)
+                    {
+                        txtIdProg.Text = programador.Id.ToString();
+                        txtNomeProg.Text = programador.Nome;
+                        txtUsernameProg.Text = programador.Username;
+                        txtPasswordProg.Text = programador.Password;
+                        cbNivelProg.Text = programador.NivelExperiencia;
+
+                        // Verifica se o gestor existe e atualiza o combobox
+                        if (programador.Gestor != null)
+                        {
+                            cbGestorProg.SelectedItem = programador.Gestor.Username;
+                        }
+                        else
+                        {
+                            cbGestorProg.SelectedIndex = -1;
+                        }
+                    }
                 }
             }
         }
